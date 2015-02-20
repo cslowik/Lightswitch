@@ -1,1 +1,1 @@
-pod ‘EstimoteSDK’
+pod 'EstimoteSDK'

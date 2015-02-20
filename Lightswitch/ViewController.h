@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EstimoteSDK/ESTBeaconManager.h>
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) ESTBeaconManager *beaconManager;
 
 @end
 

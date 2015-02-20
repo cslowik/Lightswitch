@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <ESTBeaconManagerDelegate>
 
 @end
 
@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    // setup estimote beacon manager
+    self.beaconManager = [[ESTBeaconManager alloc] init];
+    self.beaconManager.delegate = self;
+    
+    // create region object
+    ESTBeaconRegion *region = [[ESTBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"9447A2E0CB4609DBd1B1A02C0821"] identifier:@"office"];
+    
+    [self.beaconManager startEstimoteBeaconsDiscoveryForRegion:region];
+    
 }
 
 - (void)didReceiveMemoryWarning {
