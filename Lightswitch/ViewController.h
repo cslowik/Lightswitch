@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <EstimoteSDK/ESTBeaconManager.h>
 #import <CoreLocation/CoreLocation.h>
-#import <HueSDK_iOS/HueSDK.h>
+#import <DPHue/DPHue.h>
 
 @interface ViewController : UIViewController
 

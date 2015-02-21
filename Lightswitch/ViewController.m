@@ -23,20 +23,17 @@
 //@property (strong, nonatomic) PHHueSDK *hueManager;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
+@property (strong, nonatomic) NSUserDefaults *prefs;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.prefs = [NSUserDefaults standardUserDefaults];
     
     self.wasImmediate = NO;
-    /*
-    // Create sdk instance
-    self.hueManager = [[PHHueSDK alloc] init];
-    [self.hueManager startUpSDK];
-    [self.hueManager enableLogging:YES];*/
     
     // setup location manager
     self.locationManager = [CLLocationManager new];
@@ -96,6 +93,7 @@
                 self.measureLabel.text = [NSString stringWithFormat:@"%fm", distance];
                 if (!self.wasImmediate) {
                     self.wasImmediate = YES;
+                    [self allOn];
                 }
             }
                 break;
@@ -113,6 +111,7 @@
                 self.distanceLabel.text = kFarDistance;
                 self.measureLabel.text = [NSString stringWithFormat:@"%fm", distance];
                 self.wasImmediate = NO;
+                [self allOff];
             }
                 break;
                 
@@ -121,4 +120,21 @@
         }
     }
 }
+
+#pragma mark - lighting functions
+
+- (void)allOn {
+    DPHue *someHue = [[DPHue alloc] initWithHueHost:[self.prefs objectForKey:@"HueHostPrefKey"] username:[self.prefs objectForKey:@"HueAPIUsernamePrefKey"]];
+    [someHue readWithCompletion:^(DPHue *hue, NSError *err) {
+        [hue allLightsOn];
+    }];
+}
+
+- (void)allOff {
+    DPHue *someHue = [[DPHue alloc] initWithHueHost:[self.prefs objectForKey:@"HueHostPrefKey"] username:[self.prefs objectForKey:@"HueAPIUsernamePrefKey"]];
+    [someHue readWithCompletion:^(DPHue *hue, NSError *err) {
+        [hue allLightsOff];
+    }];
+}
+
 @end

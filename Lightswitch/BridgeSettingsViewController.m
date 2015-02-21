@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *discoveryProgressIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *discoveryStatusLabel;
 @property (weak, nonatomic) IBOutlet UIButton *discoverySaveButton;
+@property (weak, nonatomic) IBOutlet UILabel *hueBridgeLabel;
 
 @property (strong, nonatomic) NSUserDefaults *prefs;
 
@@ -52,6 +53,15 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)didPressSaveButton:(id)sender {
+    NSLog(@"Saving %@", self.foundHueHost);
+    [self.prefs setObject:self.foundHueHost forKey:@"HueHostPrefKey"];
+    [self.prefs synchronize];
+    self.hueBridgeLabel.text = self.foundHueHost;
+    [self.dhd stopDiscovery];
+    self.dhd = nil;
+}
+
 - (IBAction)didPressDiscoverButton:(id)sender {
     self.dhd = [[DPHueDiscover alloc] initWithDelegate:self];
     [self.dhd discoverForDuration:30 withCompletion:^(NSMutableString *log) {
@@ -74,7 +84,7 @@
             [self.discoveryProgressIndicator stopAnimating];
             [self.discoverySaveButton setEnabled:YES];
             self.foundHueHost = hue.host;
-            self.discoveryStatusLabel.text = [NSString stringWithFormat:@"Found Hue at %@, named '%@'!", hue.host, hue.name];
+            self.discoveryStatusLabel.text = [NSString stringWithFormat:@"Found Hue named '%@'!", hue.name];
         } else {
             [self.discoveryLog appendFormat:@"%@: Authentication failed, will try to create username\n", [NSDate date]];
             [someHue registerUsername];
