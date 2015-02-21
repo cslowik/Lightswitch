@@ -38,30 +38,6 @@
     [self.hueManager startUpSDK];
     [self.hueManager enableLogging:YES];
     
-    /***************************************************
-     The SDK will send the following notifications in response to events:
-     
-     - LOCAL_CONNECTION_NOTIFICATION
-     This notification will notify that the bridge heartbeat occurred and the bridge resources cache data has been updated
-     
-     - NO_LOCAL_CONNECTION_NOTIFICATION
-     This notification will notify that there is no connection with the bridge
-     
-     - NO_LOCAL_AUTHENTICATION_NOTIFICATION
-     This notification will notify that there is no authentication against the bridge
-     *****************************************************/
-    PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
-    [notificationManager registerObject:self withSelector:@selector(localConnection) forNotification:LOCAL_CONNECTION_NOTIFICATION];
-    [notificationManager registerObject:self withSelector:@selector(noLocalConnection) forNotification:NO_LOCAL_CONNECTION_NOTIFICATION];
-    [notificationManager registerObject:self withSelector:@selector(notAuthenticated) forNotification:NO_LOCAL_AUTHENTICATION_NOTIFICATION];
-    
-    /***************************************************
-     The local heartbeat is a regular timer event in the SDK. Once enabled the SDK regular collects the current state of resources managed
-     by the bridge into the Bridge Resources Cache
-     *****************************************************/
-    
-    [self enableLocalHeartbeat];
-    
     // setup location manager
     self.locationManager = [CLLocationManager new];
     
@@ -148,5 +124,4 @@
         }
     }
 }
-
 @end
