@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DPHue/DPHueDiscover.h>
 
-@interface BridgeSettingsViewController : UIViewController
+@interface BridgeSettingsViewController : UIViewController <DPHueDiscoverDelegate>
 
 @end
