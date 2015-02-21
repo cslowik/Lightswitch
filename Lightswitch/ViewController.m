@@ -20,7 +20,7 @@
 
 @property (assign, nonatomic) BOOL wasImmediate;
 
-@property (strong, nonatomic) PHHueSDK *hueManager;
+//@property (strong, nonatomic) PHHueSDK *hueManager;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
@@ -32,11 +32,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.wasImmediate = NO;
-    
+    /*
     // Create sdk instance
     self.hueManager = [[PHHueSDK alloc] init];
     [self.hueManager startUpSDK];
-    [self.hueManager enableLogging:YES];
+    [self.hueManager enableLogging:YES];*/
     
     // setup location manager
     self.locationManager = [CLLocationManager new];
@@ -95,9 +95,6 @@
                 self.distanceLabel.text = kImmediateDistance;
                 self.measureLabel.text = [NSString stringWithFormat:@"%fm", distance];
                 if (!self.wasImmediate) {
-                    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"Beacon Found" message:@"You found the Icy Marshmallow!" preferredStyle:UIAlertControllerStyleAlert];
-                    [alertVC addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-                    [self presentViewController:alertVC animated:YES completion:nil];
                     self.wasImmediate = YES;
                 }
             }

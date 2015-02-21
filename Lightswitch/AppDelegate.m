@@ -16,7 +16,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // shortcuts
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
     // App ID and App Token should be provided using method below
     // to allow beacons connection and Estimote Cloud requests possible.

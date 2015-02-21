@@ -19,14 +19,7 @@
 		831A2AC31A9712D600DFB854 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831A2AC21A9712D600DFB854 /* CoreLocation.framework */; };
 		831A2AC51A9712E800DFB854 /* libPods-EstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 831A2AC41A9712E800DFB854 /* libPods-EstimoteSDK.a */; };
 		83358F5C1A97A54200F325A9 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83358F5B1A97A54200F325A9 /* OpenSans-Regular.ttf */; };
-		8338468D1A982596006AF0D0 /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8338467C1A982596006AF0D0 /* HueSDK_iOS.framework */; };
-		8338468E1A982596006AF0D0 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8338467F1A982596006AF0D0 /* DDAbstractDatabaseLogger.m */; };
-		8338468F1A982596006AF0D0 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 833846811A982596006AF0D0 /* DDASLLogger.m */; };
-		833846901A982596006AF0D0 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 833846831A982596006AF0D0 /* DDFileLogger.m */; };
-		833846911A982596006AF0D0 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 833846851A982596006AF0D0 /* DDLog.m */; };
-		833846921A982596006AF0D0 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 833846871A982596006AF0D0 /* DDTTYLogger.m */; };
-		833846931A982596006AF0D0 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8338468A1A982596006AF0D0 /* ContextFilterLogFormatter.m */; };
-		833846941A982596006AF0D0 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8338468C1A982596006AF0D0 /* DispatchQueueLogFormatter.m */; };
+		833FA59D1A9911A4004A94A6 /* BridgeSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833FA59C1A9911A4004A94A6 /* BridgeSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,21 +52,8 @@
 		831A2AC21A9712D600DFB854 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		831A2AC41A9712E800DFB854 /* libPods-EstimoteSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-EstimoteSDK.a"; path = "Pods/build/Debug-iphoneos/libPods-EstimoteSDK.a"; sourceTree = "<group>"; };
 		83358F5B1A97A54200F325A9 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		8338467C1A982596006AF0D0 /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_iOS.framework; sourceTree = "<group>"; };
-		8338467E1A982596006AF0D0 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
-		8338467F1A982596006AF0D0 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
-		833846801A982596006AF0D0 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
-		833846811A982596006AF0D0 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
-		833846821A982596006AF0D0 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
-		833846831A982596006AF0D0 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
-		833846841A982596006AF0D0 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
-		833846851A982596006AF0D0 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
-		833846861A982596006AF0D0 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
-		833846871A982596006AF0D0 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
-		833846891A982596006AF0D0 /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
-		8338468A1A982596006AF0D0 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
-		8338468B1A982596006AF0D0 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
-		8338468C1A982596006AF0D0 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		833FA59B1A9911A4004A94A6 /* BridgeSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeSettingsViewController.h; sourceTree = "<group>"; };
+		833FA59C1A9911A4004A94A6 /* BridgeSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeSettingsViewController.m; sourceTree = "<group>"; };
 		F37B75AE1912F76B1AF7904F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -85,7 +65,6 @@
 				831A2AC51A9712E800DFB854 /* libPods-EstimoteSDK.a in Frameworks */,
 				831A2AC31A9712D600DFB854 /* CoreLocation.framework in Frameworks */,
 				831A2AC11A9712CD00DFB854 /* CoreBluetooth.framework in Frameworks */,
-				8338468D1A982596006AF0D0 /* HueSDK_iOS.framework in Frameworks */,
 				4E069F21994C6F50559B35A9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,12 +113,13 @@
 			children = (
 				831A2A9E1A97096E00DFB854 /* AppDelegate.h */,
 				831A2A9F1A97096E00DFB854 /* AppDelegate.m */,
+				833FA59B1A9911A4004A94A6 /* BridgeSettingsViewController.h */,
+				833FA59C1A9911A4004A94A6 /* BridgeSettingsViewController.m */,
 				831A2AA11A97096E00DFB854 /* ViewController.h */,
 				831A2AA21A97096E00DFB854 /* ViewController.m */,
 				831A2AA41A97096E00DFB854 /* Main.storyboard */,
 				831A2AA71A97096E00DFB854 /* Images.xcassets */,
 				831A2AA91A97096E00DFB854 /* LaunchScreen.xib */,
-				8338467B1A982596006AF0D0 /* Vendor */,
 				831A2A9A1A97096E00DFB854 /* Supporting Files */,
 			);
 			path = Lightswitch;
@@ -179,44 +159,6 @@
 			);
 			name = Fonts;
 			path = Assets/Fonts;
-			sourceTree = "<group>";
-		};
-		8338467B1A982596006AF0D0 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				8338467C1A982596006AF0D0 /* HueSDK_iOS.framework */,
-				8338467D1A982596006AF0D0 /* Lumberjack */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		8338467D1A982596006AF0D0 /* Lumberjack */ = {
-			isa = PBXGroup;
-			children = (
-				8338467E1A982596006AF0D0 /* DDAbstractDatabaseLogger.h */,
-				8338467F1A982596006AF0D0 /* DDAbstractDatabaseLogger.m */,
-				833846801A982596006AF0D0 /* DDASLLogger.h */,
-				833846811A982596006AF0D0 /* DDASLLogger.m */,
-				833846821A982596006AF0D0 /* DDFileLogger.h */,
-				833846831A982596006AF0D0 /* DDFileLogger.m */,
-				833846841A982596006AF0D0 /* DDLog.h */,
-				833846851A982596006AF0D0 /* DDLog.m */,
-				833846861A982596006AF0D0 /* DDTTYLogger.h */,
-				833846871A982596006AF0D0 /* DDTTYLogger.m */,
-				833846881A982596006AF0D0 /* Extensions */,
-			);
-			path = Lumberjack;
-			sourceTree = "<group>";
-		};
-		833846881A982596006AF0D0 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				833846891A982596006AF0D0 /* ContextFilterLogFormatter.h */,
-				8338468A1A982596006AF0D0 /* ContextFilterLogFormatter.m */,
-				8338468B1A982596006AF0D0 /* DispatchQueueLogFormatter.h */,
-				8338468C1A982596006AF0D0 /* DispatchQueueLogFormatter.m */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C4ECA7518A917C51C8F88680 /* Frameworks */ = {
@@ -366,16 +308,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833846911A982596006AF0D0 /* DDLog.m in Sources */,
-				833846921A982596006AF0D0 /* DDTTYLogger.m in Sources */,
 				831A2AA31A97096E00DFB854 /* ViewController.m in Sources */,
-				833846901A982596006AF0D0 /* DDFileLogger.m in Sources */,
 				831A2AA01A97096E00DFB854 /* AppDelegate.m in Sources */,
-				833846941A982596006AF0D0 /* DispatchQueueLogFormatter.m in Sources */,
-				8338468E1A982596006AF0D0 /* DDAbstractDatabaseLogger.m in Sources */,
+				833FA59D1A9911A4004A94A6 /* BridgeSettingsViewController.m in Sources */,
 				831A2A9D1A97096E00DFB854 /* main.m in Sources */,
-				8338468F1A982596006AF0D0 /* DDASLLogger.m in Sources */,
-				833846931A982596006AF0D0 /* ContextFilterLogFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

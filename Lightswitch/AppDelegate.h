@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <EstimoteSDK/ESTBeaconManager.h>
 #import <EstimoteSDK/ESTConfig.h>
+#import <DPHue/DPHueDiscover.h>
+#import <DPHue/DPHue.h>
+#import <DPHue/DPHueLight.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, DPHueDiscoverDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
