@@ -6,6 +6,18 @@
 // project.
 
 
+// CocoaAsyncSocket
+#define COCOAPODS_POD_AVAILABLE_CocoaAsyncSocket
+#define COCOAPODS_VERSION_MAJOR_CocoaAsyncSocket 0
+#define COCOAPODS_VERSION_MINOR_CocoaAsyncSocket 0
+#define COCOAPODS_VERSION_PATCH_CocoaAsyncSocket 1
+
+// DPHue
+#define COCOAPODS_POD_AVAILABLE_DPHue
+#define COCOAPODS_VERSION_MAJOR_DPHue 0
+#define COCOAPODS_VERSION_MINOR_DPHue 0
+#define COCOAPODS_VERSION_PATCH_DPHue 1
+
 // EstimoteSDK
 #define COCOAPODS_POD_AVAILABLE_EstimoteSDK
 #define COCOAPODS_VERSION_MAJOR_EstimoteSDK 2

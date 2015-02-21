@@ -1,1 +1,2 @@
 pod 'EstimoteSDK'
+pod 'DPHue'

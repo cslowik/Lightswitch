@@ -14,6 +14,15 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Public Domain
+</string>
+			<key>Title</key>
+			<string>DPHue</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright 2014 Estimote, Inc. All rights reserved.
 </string>
 			<key>Title</key>

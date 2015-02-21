@@ -1,10 +1,16 @@
 PODS:
+  - CocoaAsyncSocket (0.0.1)
+  - DPHue (0.0.1):
+    - CocoaAsyncSocket (~> 0.0.1)
   - EstimoteSDK (2.4.0)
 
 DEPENDENCIES:
+  - DPHue
   - EstimoteSDK
 
 SPEC CHECKSUMS:
+  CocoaAsyncSocket: 0b50442a741216b2fff60a7e6f84f6d71c18ee8a
+  DPHue: 11e3736fe1fbb864b4f9d7cab1a083b249ae2627
   EstimoteSDK: 6abcf32ed821e6669cf75d62457dded2c0951e7f
 
 COCOAPODS: 0.35.0
