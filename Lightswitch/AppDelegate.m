@@ -18,6 +18,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // shortcuts
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    if ((![prefs objectForKey:@"HueAPIUsernamePrefKey"]) || (![prefs objectForKey:@"HueHostPrefKey"])) {
+        // No API username or hostname found, probably first app run
+        NSString *newUsername = [DPHue generateUsername];
+        [prefs setObject:newUsername forKey:@"HueAPIUsernamePrefKey"];
+        [prefs synchronize];
+    }
     
     // App ID and App Token should be provided using method below
     // to allow beacons connection and Estimote Cloud requests possible.

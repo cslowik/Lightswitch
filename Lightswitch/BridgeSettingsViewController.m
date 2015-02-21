@@ -17,6 +17,9 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *discoveryProgressIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *discoveryStatusLabel;
+@property (weak, nonatomic) IBOutlet UIButton *discoverySaveButton;
+
+@property (strong, nonatomic) NSUserDefaults *prefs;
 
 @end
 
@@ -25,6 +28,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    // shortcuts
+    self.prefs = [NSUserDefaults standardUserDefaults];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +60,40 @@
     }];
     [self.discoveryProgressIndicator startAnimating];
     self.discoveryStatusLabel.text = @"Searching for Hue...";
+}
+
+- (void)createUsernameAt:(NSTimer *)timer {
+    NSString *host = timer.userInfo;
+    NSLog(@"Attempting to create username at %@", host);
+    [self.discoveryLog appendFormat:@"%@: Attempting to authenticate to %@\n", [NSDate date], host];
+    DPHue *someHue = [[DPHue alloc] initWithHueHost:host username:[[NSUserDefaults standardUserDefaults] objectForKey:@"HueAPIUsernamePrefKey"]];
+    [someHue readWithCompletion:^(DPHue *hue, NSError *err) {
+        if (hue.authenticated) {
+            [self.discoveryLog appendFormat:@"%@: Successfully authenticated\n", [NSDate date]];
+            [self.timer invalidate];
+            [self.discoveryProgressIndicator stopAnimating];
+            [self.discoverySaveButton setEnabled:YES];
+            self.foundHueHost = hue.host;
+            self.discoveryStatusLabel.text = [NSString stringWithFormat:@"Found Hue at %@, named '%@'!", hue.host, hue.name];
+        } else {
+            [self.discoveryLog appendFormat:@"%@: Authentication failed, will try to create username\n", [NSDate date]];
+            [someHue registerUsername];
+            self.discoveryStatusLabel.text = @"Press Button On Hue!";
+        }
+    }];
+}
+
+#pragma mark - DPHueDiscover delegate
+
+- (void)foundHueAt:(NSString *)host discoveryLog:(NSMutableString *)log {
+    self.discoveryLog = log;
+    [self.discoveryProgressIndicator startAnimating];
+    [self.discoverySaveButton setEnabled:NO];
+    self.discoveryStatusLabel.text = @"Hue Found! Authenticating...";
+    DPHue *someHue = [[DPHue alloc] initWithHueHost:host username:[self.prefs objectForKey:@"HueAPIUsernamePrefKey"]];
+    [someHue readWithCompletion:^(DPHue *hue, NSError *err) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(createUsernameAt:) userInfo:host repeats:YES];
+    }];
 }
 
 @end

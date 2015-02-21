@@ -115,8 +115,23 @@
                                     <action selector="didPressBackButton:" destination="Qgq-dz-rBT" eventType="touchUpInside" id="mJd-e2-LgR"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="89s-86-igR">
+                                <rect key="frame" x="403" y="450" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF4-zf-NuQ">
+                                <rect key="frame" x="16" y="391" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nX-uQ-VFT">
+                                <rect key="frame" x="277" y="505" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cu5-oC-uKG">
-                                <rect key="frame" x="210" y="504" width="180" height="30"/>
+                                <rect key="frame" x="210" y="445" width="180" height="30"/>
                                 <state key="normal" title="Auto-Discover Hue Bridge">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -124,19 +139,10 @@
                                     <action selector="didPressDiscoverButton:" destination="Qgq-dz-rBT" eventType="touchUpInside" id="gkc-Jv-NYR"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="89s-86-igR">
-                                <rect key="frame" x="403" y="509" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF4-zf-NuQ">
-                                <rect key="frame" x="16" y="450" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jkW-mv-C9K" firstAttribute="top" secondItem="89s-86-igR" secondAttribute="bottom" constant="71" id="0z7-m1-XE2"/>
+                            <constraint firstItem="jkW-mv-C9K" firstAttribute="top" secondItem="89s-86-igR" secondAttribute="bottom" constant="130" id="0z7-m1-XE2"/>
                             <constraint firstItem="yF4-zf-NuQ" firstAttribute="trailing" secondItem="f6T-GR-hbe" secondAttribute="trailingMargin" id="1rH-tI-73s"/>
                             <constraint firstItem="cu5-oC-uKG" firstAttribute="top" secondItem="yF4-zf-NuQ" secondAttribute="bottom" constant="33" id="2hI-bR-3yQ"/>
                             <constraint firstAttribute="centerX" secondItem="cu5-oC-uKG" secondAttribute="centerX" id="LT4-d5-BVG"/>
@@ -144,11 +150,12 @@
                             <constraint firstItem="yF4-zf-NuQ" firstAttribute="leading" secondItem="f6T-GR-hbe" secondAttribute="leadingMargin" id="Vyj-3X-4fv"/>
                             <constraint firstItem="jkW-mv-C9K" firstAttribute="top" secondItem="MOg-Se-uTP" secondAttribute="bottom" constant="20" id="gmN-GH-7wd"/>
                             <constraint firstItem="89s-86-igR" firstAttribute="leading" secondItem="cu5-oC-uKG" secondAttribute="trailing" constant="13" id="jg3-u7-TCp"/>
-                            <constraint firstItem="jkW-mv-C9K" firstAttribute="top" secondItem="cu5-oC-uKG" secondAttribute="bottom" constant="66" id="kA6-Vj-oS5"/>
+                            <constraint firstItem="jkW-mv-C9K" firstAttribute="top" secondItem="cu5-oC-uKG" secondAttribute="bottom" constant="125" id="kA6-Vj-oS5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="discoveryProgressIndicator" destination="89s-86-igR" id="lFy-Tw-4Kj"/>
+                        <outlet property="discoverySaveButton" destination="9nX-uQ-VFT" id="KGm-tH-huN"/>
                         <outlet property="discoveryStatusLabel" destination="yF4-zf-NuQ" id="2oU-yn-jO2"/>
                     </connections>
                 </viewController>
