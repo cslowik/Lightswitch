@@ -17,6 +17,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // App ID and App Token should be provided using method below
+    // to allow beacons connection and Estimote Cloud requests possible.
+    // Both values can be found in Estimote Cloud ( http://cloud.estimote.com )
+    // in Account Settings tab.
+    [ESTConfig setupAppID:@"app_2dwqz05f0n" andAppToken:@"f80a49563968060363cfa4cf11956cb5"];
+    
+    // Estimote Analytics allows you to log activity related to monitoring mechanism.
+    // At the current stage it is possible to log all enter/exit events when monitoring
+    // Particular beacons (Proximity UUID, Major, Minor values needs to be provided).
+    [ESTConfig enableAnalytics:NO];
+    
+    
     return YES;
 }
 

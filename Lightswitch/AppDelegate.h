@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EstimoteSDK/ESTBeaconManager.h>
+#import <EstimoteSDK/ESTConfig.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

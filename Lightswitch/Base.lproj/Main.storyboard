@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C78c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +22,56 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radar" translatesAutoresizingMaskIntoConstraints="NO" id="Qcq-Wu-aW7">
+                                <rect key="frame" x="30" y="30" width="540" height="540"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qcq-Wu-aW7" secondAttribute="height" multiplier="1:1" id="UAx-yS-Jop"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Searching..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVt-68-oRQ">
+                                <rect key="frame" x="194" y="286" width="213" height="28"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ2-Xd-deG">
+                                <rect key="frame" x="296" y="555" width="274" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qcq-Wu-aW7" secondAttribute="trailing" constant="14" id="AEc-MT-JrW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lVt-68-oRQ" secondAttribute="trailing" constant="177" id="BKy-1t-S7Z"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="qJ2-Xd-deG" secondAttribute="bottom" constant="20" id="HX0-KM-LnH"/>
+                            <constraint firstAttribute="centerY" secondItem="lVt-68-oRQ" secondAttribute="centerY" id="TAu-fX-55y"/>
+                            <constraint firstAttribute="centerX" secondItem="lVt-68-oRQ" secondAttribute="centerX" id="TxZ-eQ-Aqn"/>
+                            <constraint firstItem="Qcq-Wu-aW7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="14" id="aET-hA-Evf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qJ2-Xd-deG" secondAttribute="trailing" constant="14" id="dxC-IQ-lgi"/>
+                            <constraint firstAttribute="centerX" secondItem="Qcq-Wu-aW7" secondAttribute="centerX" id="eLG-JQ-k5c"/>
+                            <constraint firstItem="lVt-68-oRQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="178" id="szL-sq-7sB"/>
+                            <constraint firstAttribute="centerY" secondItem="Qcq-Wu-aW7" secondAttribute="centerY" id="yYK-YS-lFO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BKy-1t-S7Z"/>
+                                <exclude reference="szL-sq-7sB"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="distanceLabel" destination="lVt-68-oRQ" id="k8e-b7-rE2"/>
+                        <outlet property="measureLabel" destination="qJ2-Xd-deG" id="65c-pl-igW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="radar" width="292" height="292"/>
+    </resources>
 </document>
